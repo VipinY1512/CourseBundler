@@ -13,7 +13,7 @@ const VerticalNav = ({url = "/", title = "Home",onClose}) =>(
 
 const Header = () => {
   const {isOpen,onClose,onOpen} = useDisclosure();
-  const isAuthenticated = false;
+  const isAuthenticated = true;
   const user = {
     role: "admin"
   }
@@ -25,6 +25,7 @@ const Header = () => {
   <Button onClick = {onOpen}colorScheme={'yellow'}
   height={"12"}
   width={"12"}
+  zIndex={"overlay"}
   rounded={"full"}
   position={"fixed"}
   left={6}

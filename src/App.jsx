@@ -17,11 +17,18 @@ import PaymentSuccess from "./components/Payment/PaymentSuccess.jsx";
 import PaymentFail from "./components/Payment/PaymentFail.jsx";
 import NotFound from "./components/layout/NotFound/NotFound.jsx";
 import CoursePage from "./components/CoursePage/CoursePage.jsx";
+import Profile from "./components/Profile/Profile.jsx";
+import ChangePassword from "./components/Profile/ChangePassword.jsx";
+import UpdateProfile from "./components/Profile/UpdateProfile.jsx";
+import Dashboard from "./components/Admin/Dashboard/Dashboard.jsx";
+import CreateCourse from "./components/Admin/createcourse/CreateCourse.jsx";
+import AdminCourses from "./components/Admin/Courses/AdminCourses.jsx";
+import Users from "./components/Admin/Users/Users.jsx";
 
 function App() {
-  window.addEventListener('contextmenu', e => {
-    e.preventDefault();
-  })
+  // window.addEventListener('contextmenu', (e) => {
+  //   e.preventDefault();
+  // })
   return (
     <Router>
         <Header/>
@@ -32,6 +39,9 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/request" element={<Request/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/changepassword" element={<ChangePassword />} />
+        <Route path="/updateprofile" element={<UpdateProfile />} />
         <Route path="/login" element = {<Login/>} />
         <Route path="/register" element = {<Register/>} />
         <Route path="/forgetpassword" element = {<Forgetpassword/>}/>
@@ -40,6 +50,12 @@ function App() {
         <Route path="*" element = {<NotFound />} />
         <Route path="/paymentsuccess" element = {<PaymentSuccess />} />
         <Route path="/paymentfail" element = {<PaymentFail />} />
+
+        {/* Admin Routes */}
+        <Route path="/admin/dashboard" element = {<Dashboard />} />
+        <Route path="/admin/createcourse" element = {<CreateCourse />} />
+        <Route path="/admin/courses" element = {<AdminCourses />} />
+        <Route path="/admin/users" element = {<Users />} />
       </Routes>
       <Footer/>
     </Router>
